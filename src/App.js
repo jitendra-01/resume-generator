@@ -2,6 +2,7 @@ import './App.css';
 import Interest from "./component/interests"
 import Skills from "./component/skills"
 import Education from "./component/education"
+import Experience from './component/experience';
 
 let edudat={
   college:"BR. Ambedkar National Institute of Technology, Jalandhar",
@@ -27,7 +28,7 @@ function App() {
           cgpa={edudat.cgpa}
         ></Education>
         <hr/>
-        
+        <Experience></Experience>
       </div>
     </>
   );
