@@ -3,32 +3,18 @@ import Interest from "./component/interests"
 import Skills from "./component/skills"
 import Education from "./component/education"
 import Experience from './component/experience';
-
-let edudat={
-  college:"BR. Ambedkar National Institute of Technology, Jalandhar",
-  year:"2021-2025",
-  cgpa:"9.0",
-  id:1,
-};
+import Print from './component/print';
 
 function App() {
   return (
     <>
+      <Print></Print>
       <div>
-        <h1>RESUME</h1>
-        <Interest></Interest>
-        <hr/>
-        <Skills></Skills>
-        <hr/>
-        <h3>EDUCATION</h3>
-        <Education
-          key={edudat.id}
-          college={edudat.college}
-          year={edudat.year}
-          cgpa={edudat.cgpa}
-        ></Education>
-        <hr/>
-        <Experience></Experience>
+          <div className='Printable'><h1 className='heading'>RESUME</h1></div>
+          <Interest></Interest>
+          <Skills></Skills>
+          <Education></Education>
+          <Experience></Experience>
       </div>
     </>
   );

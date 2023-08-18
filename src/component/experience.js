@@ -1,12 +1,16 @@
 import exps from "./data/exps";
 
 function Experience(){
+    if(exps.length===0){
+        return;
+    }
     const listdata=exps.map(
         exp=><li>{exp}</li>
     )
     return (
         <>
             <h3>EXPERIENCE</h3>
+            <hr/>
             <ui>{listdata}</ui>
         </>
     );

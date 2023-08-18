@@ -1,0 +1,10 @@
+@media print {
+    .Print{
+        visibility: hidden;
+    }
+}
+
+.Print{
+    position: absolute;
+    right:10px;
+}
