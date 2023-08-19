@@ -55,9 +55,9 @@ function App() {
       <Addinterests AddInterests={AddInterests}></Addinterests>
       <div>
           <div className='Printable'><h1 className='heading'>RESUME</h1></div>
+          <Education edudat={educationdata}></Education>
           <Interest interest={interests}></Interest>
           <Skills skills={totalskill}></Skills>
-          <Education edudat={educationdata}></Education>
           <Experience exps={experiences}></Experience>
       </div>
     </>
