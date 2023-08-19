@@ -1,7 +1,6 @@
-import edudat from "./data/edudat";
+// import edudat from "./data/edudat";
 
-function Education(){
-    console.log("Hello",Object.keys(edudat).length)
+function Education({edudat}){
     if(Object.keys(edudat).length===0){
         return;
     }

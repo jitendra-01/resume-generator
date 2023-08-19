@@ -1,6 +1,4 @@
-import interest from "./data/interest";
-
-function Interest(){
+function Interest({interest}){
     if(interest.length===0){
         return ;
     }

@@ -1,6 +1,5 @@
-import exps from "./data/exps";
-
-function Experience(){
+function Experience({exps}){
+    
     if(exps.length===0){
         return;
     }

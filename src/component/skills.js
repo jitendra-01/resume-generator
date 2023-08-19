@@ -1,6 +1,4 @@
-import skills from "./data/skilldat"
-
-function Skills(){
+function Skills({skills}){
     if (skills.length===0){
         return ;
     }
