@@ -13,33 +13,35 @@ import exps from './component/data/exps';
 import Addexperience from './component/addexperience';
 import Addinterests from './component/addinterests';
 import interest from './component/data/interest';
+import Theme from './component/context/themecontext';
 
 function App() {
 
-  const [educationdata,seteducationdata]=useState(edudat);
-  const [totalskill,setskills]=useState(skills);
-  const [experiences,setexperiences]=useState(exps);
-  const [interests,setinterests]=useState(interest)
+  const [educationdata, seteducationdata] = useState(edudat);
+  const [totalskill, setskills] = useState(skills);
+  const [experiences, setexperiences] = useState(exps);
+  const [interests, setinterests] = useState(interest)
+  const [mode, setMode] = useState('darkMode');
 
-  function Update(edudata){
+  function Update(edudata) {
     seteducationdata(edudata);
   }
 
-  function AddSkills(skill){
+  function AddSkills(skill) {
     setskills([
       ...totalskill,
       skill
     ])
   }
 
-  function AddExperience(experience){
+  function AddExperience(experience) {
     setexperiences([
       ...experiences,
       experience
     ])
   }
 
-  function AddInterests(Interests){
+  function AddInterests(Interests) {
     setinterests([
       ...interests,
       Interests
@@ -47,20 +49,25 @@ function App() {
   }
 
   return (
-    <>
-      <Print></Print>
-      <Editeducation Update={Update} ></Editeducation>
-      <Addskills AddSkills={AddSkills}></Addskills>
-      <Addexperience AddExperience={AddExperience}></Addexperience>
-      <Addinterests AddInterests={AddInterests}></Addinterests>
-      <div>
+    <Theme.Provider value={mode}>
+      <div className={`App ${mode}`}>
+        <button onClick={() =>
+          setMode(mode === 'darkMode' ? 'lightMode' : 'darkMode')
+        }>{mode === 'darkMode' ? 'lightMode' : 'darkMode'}</button><br></br>
+        <Print></Print>
+        <Editeducation Update={Update} ></Editeducation>
+        <Addskills AddSkills={AddSkills}></Addskills>
+        <Addexperience AddExperience={AddExperience}></Addexperience>
+        <Addinterests AddInterests={AddInterests}></Addinterests>
+        <div>
           <div className='Printable'><h1 className='heading'>RESUME</h1></div>
           <Education edudat={educationdata}></Education>
           <Interest interest={interests}></Interest>
           <Skills skills={totalskill}></Skills>
           <Experience exps={experiences}></Experience>
-      </div>
-    </>
+        </div>
+      </div >
+    </Theme.Provider>
   );
 }
 

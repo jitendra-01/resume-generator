@@ -21,7 +21,7 @@ function Editeducation({Update}){
             <input onChange={handleChange} placeholder="College" name="college" value={edudata.college}></input><br></br>
             <input onChange={handleChange} placeholder="Year" name="year" value={edudata.year}></input><br></br>
             <input onChange={handleChange} placeholder="Cgpa" name="cgpa" value={edudata.cgpa}></input><br></br>
-            <button onClick={handleClick}>Change Education</button><br></br>
+            <button onClick={handleClick}>Add/Change Education</button><br></br>
         </>
     )
 }
